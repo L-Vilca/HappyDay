@@ -1,4 +1,4 @@
-# 🎉 Proyecto de Animación y Música en Python
+# 🎉 Animación y Música en Python
 
 <img src="https://i.imgur.com/oRo00at.png" alt="Portada Liz Vilca">
 
