@@ -51,15 +51,15 @@ ascii_art = """
 # Añadir el arte ASCII en la parte superior (color blanco fijo)
 ascii_text = ax.text(0, 1.5, ascii_art, color="white", fontsize=6, ha="center", va="center", family="monospace", zorder=3)
 
-# Nuevo arte ASCII para "JOHAKIN" que estará debajo de la imagen (color blanco)
-text_johakin = ax.text(0, -1.5, """
-  ▄▄▄▄▄ ████▄  ▄  █ ██   █  █▀ ▄█    ▄   
-▄▀  █   █   █ █   █ █ █  █▄█   ██     █  
-    █   █   █ ██▀▀█ █▄▄█ █▀▄   ██ ██   █ 
- ▄ █    ▀████ █   █ █  █ █  █  ▐█ █ █  █ 
-  ▀              █     █   █    ▐ █  █ █ 
-                ▀     █   ▀       █   ██ 
-                     ▀                    
+
+text_name = ax.text(0, -1.5, """
+   ▄   ██   █▀▄▀█ ▄███▄   
+    █  █ █  █ █ █ █▀   ▀  
+██   █ █▄▄█ █ ▄ █ ██▄▄    
+█ █  █ █  █ █   █ █▄   ▄▀ 
+█  █ █    █    █  ▀███▀   
+█   ██   █    ▀           
+        ▀                 
 """, color="white", fontsize=6, ha="center", va="center", weight="bold", family="monospace", zorder=3)
 
 # Crear texto adicional alrededor de la imagen (fuera de la imagen)
@@ -93,7 +93,7 @@ def update(frame):
     
     # Animar el texto "JOHAKIN" con pulso (sin cambio de color)
     scale_factor_text = 1 + 0.1 * np.sin(frame / 5.0)  # Efecto de pulso para el texto
-    text_johakin.set_fontsize(6 * scale_factor_text)  # Cambiar el tamaño de la fuente
+    text_name.set_fontsize(6 * scale_factor_text)  # Cambiar el tamaño de la fuente
     
     # El texto ASCII de arriba (se mantiene blanco y sin cambio de color)
     ascii_text.set_fontsize(6 * (1 + 0.1 * np.sin(frame / 5.0)))  # Animar el tamaño del texto ASCII
@@ -113,7 +113,7 @@ def update(frame):
         if frame > (i * 20):  # Hacer que aparezca después de cierto número de frames
          extra_text.set_alpha(min(0.05 * (frame - i * 20), 1))  # Limitar la opacidad entre 0 y 1
 
-    return [ascii_text, imagebox, text_johakin, stars] + extra_text_objects
+    return [ascii_text, imagebox, text_name, stars] + extra_text_objects
 
 # Crear la animación
 ani = animation.FuncAnimation(fig, update, frames=100, interval=50, repeat=True)
