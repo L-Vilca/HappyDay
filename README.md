@@ -1,5 +1,7 @@
 # 🎉 Proyecto de Animación y Música en Python
 
+<img src="https://i.imgur.com/oRo00at.png" alt="Portada Liz Vilca">
+
 Este proyecto utiliza **Matplotlib, Pygame y PIL** para mostrar una animación con efectos visuales y reproducir música de fondo. 🖼️🎵
 
 ## 🛠️ Tecnologías utilizadas
